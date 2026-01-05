@@ -1,3 +1,3 @@
-# Express + Prisma template
+# My express app template
 
-A starter kit for building RESTful APIs with Express.js and Prisma ORM v7.
+My starter kit for building RESTful APIs with Express.js and Prisma ORM.
