@@ -1,8 +1,10 @@
 import app from "./app.js";
 import { config } from "./config.js";
+import { prisma } from "./lib/prisma.js";
 
 const startServer = async () => {
   try {
+    await prisma.$connect();
     // Start server
     const server = app.listen(config.port, () => {
       console.info(
@@ -16,6 +18,8 @@ const startServer = async () => {
 
       server.close(async () => {
         console.info("HTTP server closed");
+
+        await prisma.$disconnect();
         console.info("Database connection closed");
 
         process.exit(0);
